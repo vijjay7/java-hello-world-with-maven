@@ -1,0 +1,4 @@
+name: Maven versoning
+on:
+  push:
+    branches: [ main ]
