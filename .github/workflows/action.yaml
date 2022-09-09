@@ -1,4 +1,4 @@
-name: Maven versoning
+name: Maven-version
 on:
   push:
     branches: [ master ]
@@ -6,7 +6,11 @@ jobs:
   container-test-job:
     runs-on: ubuntu-latest
     container:
-      image: maven:3.8.6-jdk-11
+      image: maven:3.3-jdk-8
+      volumes:
+        - /home/ubuntu/:/__w/java-hello-world-with-maven/java-hello-world-with-maven
     steps:
-      - name: Checkout Github Action
-        uses: action/checkout/master@v1
+    - name: Checkout Github Action
+      uses: actions/checkout@v3
+    - name: Build with Maven
+      run: mvn clean versions:set -DnewVersion=0.4.0
