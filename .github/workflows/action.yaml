@@ -23,7 +23,7 @@ jobs:
       with:
         name: my-artifact
         path: path/to/artifact
-    - name: 'Download Artifact'
+    - name: 'Download Artifact1'
     - uses: actions/checkout@master
     - uses: actions/download-artifact@master
       with:
