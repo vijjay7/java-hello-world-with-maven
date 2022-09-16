@@ -1,6 +1,6 @@
 name: Maven-version
 runs:
   using: "composite"
-#     steps:
-#     - name: Checkout Github Action
-#       uses: actions/checkout@v3
+  steps:
+  - name: Checkout Github Action
+    uses: actions/checkout@v3
