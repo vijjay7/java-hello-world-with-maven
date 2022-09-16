@@ -4,4 +4,3 @@ runs:
     steps:
     - name: Checkout Github Action
       uses: actions/checkout@v3
-
