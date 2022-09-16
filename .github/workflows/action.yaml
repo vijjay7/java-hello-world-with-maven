@@ -4,8 +4,8 @@ maven:
 runs:
   using: "composite"
   steps:
-  - name: Checkout Github Action
-    uses: actions/checkout@v3
+#   - name: Checkout Github Action
+#     uses: actions/checkout@v3
   - name: Maven Versioning
     run: mvn clean versions:set -DnewVersion=0.4.0
     shell: bash
