@@ -9,10 +9,13 @@ runs:
     shell: bash
   - name: Maven Built
     run: mvn clean package
-    shell: bash
+    shell: bash 
+  - uses: actions/checkout@v2
+  - run: mkdir -p path/to/artifact
+  - run: echo hello > path/to/artifact/world.txt
   - uses: actions/upload-artifact@v3
     with:
       name: my-artifact
-      path: path/to/artifact/ # or path/to/artifact
+      path: path/to/artifact/world.txt
 
     
