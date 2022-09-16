@@ -6,7 +6,6 @@ runs:
     uses: actions/checkout@v3
   - name: Maven Versioning
     run: mvn clean versions:set -DnewVersion=0.4.0
-    shell: bash
   - name: Maven Built
     run: mvn clean package
-    shell: bash
+    
