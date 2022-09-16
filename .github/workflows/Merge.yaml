@@ -14,5 +14,5 @@ jobs:
     - name: Checkout  
       uses: actions/checkout@v2
     - name: Calling Composite action file  
-      uses: java-hello-world-with-maven/.github/workflows/action.yaml
+      uses: ./.github/workflows/action.yaml
 #Test1
