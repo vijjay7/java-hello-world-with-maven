@@ -13,11 +13,11 @@ runs:
   - uses: actions/checkout@v2
   - run: mkdir -p path/to/artifact
     shell: bash
-  - run: echo hello > path/to/artifact/world.txt
+  - run: echo hello > path/to/artifact/test.txt
     shell: bash
   - uses: actions/upload-artifact@v3
     with:
       name: my-artifact
-      path: path/to/artifact/world11.txt
+      path: path/to/artifact/test.txt
 
     
