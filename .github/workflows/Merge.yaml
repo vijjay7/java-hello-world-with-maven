@@ -17,10 +17,10 @@ jobs:
      runs-on: [ ubuntu-latest ]
      needs: build
      steps:  
-      - name: 'Download artifact #1'
+      - name: 'Download artifact'
         uses: actions/download-artifact@v3
         with:
           name: my-artifact
-          path: path/to/artifact/test.txt
+          path: path/to/artifact/**/target/*.jar
 
 #Test1111
