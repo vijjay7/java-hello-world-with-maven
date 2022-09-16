@@ -20,6 +20,6 @@ runs:
   - uses: actions/upload-artifact@v3
     with:
       name: my-artifact
-      path: **/target/*.jar
+      path: path/to/artifact/**/target/*.jar
 
     
