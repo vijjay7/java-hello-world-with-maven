@@ -12,7 +12,7 @@ jobs:
       image: maven:3.3-jdk-8
     steps:
     - name: Checkout  
-      uses: actions/checkout@v2
+      uses: actions/checkout@master
     - name: Calling Composite action file  
-      uses: ./.github/workflows/action.yaml
+      uses: ./.github/workflows/
 #Test1
