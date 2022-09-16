@@ -15,4 +15,10 @@ jobs:
       uses: ./.github/workflows/
       with:
         image: maven:3.3-jdk-8
+    - name: 'Download artifact #1'
+      uses: actions/download-artifact@v3
+      with:
+        name: my-artifact
+        path: path/to/artifact/
+
 #Test111
