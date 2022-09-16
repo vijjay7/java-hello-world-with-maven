@@ -14,7 +14,10 @@ jobs:
     - name: Calling Composite action file  
       uses: ./.github/workflows/
       with:
-        image: maven:3.3-jdk-8
+        image: maven:3.3-jdk-8   
+  deploy:
+    needs: build
+    steps:
     - name: 'Download artifact #1'
       uses: actions/download-artifact@v3
       with:
