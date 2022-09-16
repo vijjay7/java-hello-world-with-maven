@@ -15,11 +15,11 @@ runs:
   - uses: actions/checkout@v2
   - run: mkdir -p path/to/artifact
     shell: bash
-#   - run: echo hello > path/to/artifact/test.txt
-#     shell: bash
+  - run: cp /home/runner/work/java-hello-world-with-maven/java-hello-world-with-maven/target/*.jar  path/to/artifact/
+    shell: bash
   - uses: actions/upload-artifact@v3
     with:
       name: my-artifact
-      path: path/to/artifact/**/target/*.jar
+      path: path/to/artifact/
 
     
