@@ -1,14 +1,6 @@
 name: Maven-version
-on:
-  push:
-    branches: [ master ]
-jobs:
-  container-test-job:
-    runs-on: ubuntu-latest
-    container:
-      image: maven:3.3-jdk-8
-      volumes:
-        - /home/ubuntu/:/__w/java-hello-world-with-maven/java-hello-world-with-maven
+runs:
+  using: "composite"
     steps:
     - name: Checkout Github Action
       uses: actions/checkout@v3
@@ -16,19 +8,19 @@ jobs:
       run: mvn clean versions:set -DnewVersion=0.4.0
     - name: Maven Built
       run: mvn clean package
-    - name: Upload Artifact
-      uses: actions/checkout@v2
-    - run: mkdir -p path/to/artifact
-    - uses: actions/upload-artifact@master
-      with:
-        name: my-artifact
-        path: path/to/artifact
-    - name: Download Artifact1
-    - uses: actions/checkout@master
-    - uses: actions/download-artifact@master
-      with:
-        name: my-artifact
-        path: path/to/artifact
+#     - name: Upload Artifact
+#       uses: actions/checkout@v2
+#     - run: mkdir -p path/to/artifact
+#     - uses: actions/upload-artifact@master
+#       with:
+#         name: my-artifact
+#         path: path/to/artifact
+#     - name: Download Artifact1
+#     - uses: actions/checkout@master
+#     - uses: actions/download-artifact@master
+#       with:
+#         name: my-artifact
+#         path: path/to/artifact
         
         
 #Test1
