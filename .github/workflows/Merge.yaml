@@ -13,4 +13,6 @@ jobs:
       uses: actions/checkout@v2
     - name: Calling Composite action file  
       uses: ./.github/workflows/
+      with:
+        image: maven:3.3-jdk-8
 #Test
