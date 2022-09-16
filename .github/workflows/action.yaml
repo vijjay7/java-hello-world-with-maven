@@ -1,9 +1,9 @@
 
 name: Maven-version
 runs:
-container:
-  image: maven:3.3-jdk-8
   using: "composite"
+  container:
+      image: maven:3.3-jdk-8
   steps:
   - name: Checkout Github Action
     uses: actions/checkout@v3
