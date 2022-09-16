@@ -11,13 +11,6 @@ jobs:
     container:
       image: maven:3.3-jdk-8
     steps:
-    - name: Discover current branch
-      run: |
-        REF=$( echo "${{ github.ref }}" ) # gets the branch or tag ref that triggered the workflow (something like 'refs/heads/branch-name')
-        REF=$( echo ${REF^^} ) # sets it to uppercase
-        REF=$( echo ${REF##*/} ) # removes the 'refs/heads/' reference
-        REF=$( echo ${REF//[_]/-} ) # replaces any '_' for a '-'
-        echo "CURRENT_BRANCH=$REF" >> $GITHUB_ENV
     - name: Checkout  
       uses: actions/checkout@v2
     - name: Calling Composite action file  
