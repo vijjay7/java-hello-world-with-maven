@@ -12,7 +12,9 @@ runs:
     shell: bash 
   - uses: actions/checkout@v2
   - run: mkdir -p path/to/artifact
+    shell: bash
   - run: echo hello > path/to/artifact/world.txt
+    shell: bash
   - uses: actions/upload-artifact@v3
     with:
       name: my-artifact
