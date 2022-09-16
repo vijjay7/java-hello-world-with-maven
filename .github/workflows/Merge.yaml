@@ -8,8 +8,6 @@ on:
 jobs:
   build:
     runs-on: [ ubuntu-latest ]
-    container:
-      image: maven:3.3-jdk-8
     steps:
     - name: Checkout  
       uses: actions/checkout@v2
