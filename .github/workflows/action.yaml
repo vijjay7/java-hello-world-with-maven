@@ -1,15 +1,15 @@
 name: Maven-version
 runs:
-container:
-  image: maven:3.3-jdk-8
-  using: "composite"
-    steps:
-    - name: Checkout Github Action
-      uses: actions/checkout@v3
-    - name: Maven Versioning
-      run: mvn clean versions:set -DnewVersion=0.4.0
-    - name: Maven Built
-      run: mvn clean package
+  container:
+    image: maven:3.3-jdk-8
+    using: "composite"
+      steps:
+      - name: Checkout Github Action
+        uses: actions/checkout@v3
+      - name: Maven Versioning
+        run: mvn clean versions:set -DnewVersion=0.4.0
+      - name: Maven Built
+        run: mvn clean package
 #     - name: Upload Artifact
 #       uses: actions/checkout@v2
 #     - run: mkdir -p path/to/artifact
