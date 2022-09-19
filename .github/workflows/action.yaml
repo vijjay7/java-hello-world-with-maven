@@ -16,6 +16,7 @@ runs:
   - run: mkdir -p artifact_dir
     shell: bash
   - run: ls -l
+    shell: bash
   - run: pwd
     shell: bash
   - run: cp /home/runner/work/java-hello-world-with-maven/java-hello-world-with-maven/target/*.jar  artifact_dir
