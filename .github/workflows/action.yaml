@@ -13,13 +13,15 @@ runs:
     run: mvn clean package
     shell: bash 
   - uses: actions/checkout@v2
-  - run: mkdir -p path/to/artifact
+  - run: mkdir -p artifact_dir
     shell: bash
-  - run: cp /home/runner/work/java-hello-world-with-maven/java-hello-world-with-maven/target/*.jar  path/to/artifact/
+  - run: ls -l
+    shell: bash
+  - run: cp /home/runner/work/java-hello-world-with-maven/java-hello-world-with-maven/target/*.jar  artifact_dir
     shell: bash
   - uses: actions/upload-artifact@v3
     with:
       name: my-artifact
-      path: path/to/artifact/
+      path: artifact_dir
 
     
