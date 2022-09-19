@@ -18,7 +18,7 @@ runs:
     shell: bash
   - run: pwd
     shell: bash
-  - run: cp -rf /home/runner/work/java-hello-world-with-maven/java-hello-world-with-maven/target/jb-hello-world-maven-0.4.0-shaded.jar  /home/runner/work/java-hello-world-with-maven/java-hello-world-with-maven/artifact_dir/
+  - run: cp target/*.jar  artifact_dir/
     shell: bash
   - run: ls ./artifact_dir
     shell: bash 
