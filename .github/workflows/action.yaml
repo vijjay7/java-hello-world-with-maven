@@ -10,9 +10,8 @@ runs:
     run: mvn clean versions:set -DnewVersion=0.4.0
     shell: bash
   - name: Maven Built
-    run: mvn clean package
+    run: mvn package
     shell: bash 
-  - uses: actions/checkout@v2
   - run: mkdir -p artifact_dir
     shell: bash
   - run: ls -l
