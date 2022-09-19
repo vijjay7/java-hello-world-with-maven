@@ -19,7 +19,7 @@ runs:
     shell: bash
   - run: pwd
     shell: bash
-  - run: cp -rf ./target/*.jar  ./artifact_dir
+  - run: cp -rf ./target/*.jar  ./artifact_dir/
     shell: bash
   - run: ls ./artifact_dir
     shell: bash 
