@@ -14,14 +14,8 @@ runs:
     shell: bash 
   - run: mkdir -p artifact_dir
     shell: bash
-  - run: ls -l
+  - run: cp target/jb-*.jar  artifact_dir/
     shell: bash
-  - run: pwd
-    shell: bash
-  - run: cp target/*.jar  artifact_dir/
-    shell: bash
-  - run: ls ./artifact_dir
-    shell: bash 
   - uses: actions/upload-artifact@v3
     with:
       name: my-artifact
