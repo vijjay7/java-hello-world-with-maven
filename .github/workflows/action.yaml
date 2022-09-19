@@ -19,7 +19,7 @@ runs:
     shell: bash
   - run: pwd
     shell: bash
-  - run: sudo cp -rf ./target/*.jar  ./artifact_dir/
+  - run: cp -rf /home/runner/work/java-hello-world-with-maven/java-hello-world-with-maven/target/*.jar  /home/runner/work/java-hello-world-with-maven/java-hello-world-with-maven/artifact_dir/
     shell: bash
   - run: ls ./artifact_dir
     shell: bash 
