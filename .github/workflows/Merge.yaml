@@ -24,7 +24,7 @@ jobs:
        image: maven:3.3-jdk-8
      needs: build
      steps:  
-      - name: 'Download artifact'
+      - name: 'Download Updated pom.xml'
         uses: actions/download-artifact@v3
         with:
           name: my-artifact
