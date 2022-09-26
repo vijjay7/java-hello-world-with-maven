@@ -1,45 +1,30 @@
-name: Merge to feature
-
-# Workflow for push on a feature branch
-on:
-  push:
-    branches:
-      - master
-jobs:
-  build:
-    runs-on: [ ubuntu-latest ]
-    container:
-      image: maven:3.3-jdk-8
-    steps:
-    - name: Checkout  
-      uses: actions/checkout@v2
-    - name: Calling Composite action file  
-      uses: ./.github/workflows/
-    - name: Cmd run
-      run: ls -l
-      shell: bash
-  Build-download:
-     runs-on: [ ubuntu-latest ]
-     container:
-       image: maven:3.3-jdk-8
-     needs: build
-     steps:  
-      - name: 'Caching pom.xml'
-        uses: actions/cache@v2
-        with:
-          path: /__w/java-hello-world-with-maven/artifact_dir
-          key: key1
-      - name: Checkout  directory 
-        run: pwd
-        shell: bash
-        working-directory:  /__w/java-hello-world-with-maven/artifact_dir/
-      - name: Checkout  
-        uses: actions/checkout@v2
-      - name: Maven Built
-        run: mvn package
-        shell: bash
-      - name: 'Download jar file'
-        uses: actions/upload-artifact@v3
-        with:
-          name: my-artifact2
-          path: /__w/java-hello-world-with-maven/java-hello-world-with-maven/target/
+name: Maven-version
+runs:
+  using: "composite"
+  steps:
+#   - name: Checkout Github Action
+#     uses: actions/checkout@v3
+  - name: Maven Versioning
+    run: mvn clean versions:set -DnewVersion=0.4.0
+    shell: bash
+  - name: Listing Files
+    run: ls -l
+    shell: bash
+  - name: Path
+    run: pwd
+    shell: bash
+  - run: mkdir -p /__w/java-hello-world-with-maven/artifact_dir
+    shell: bash
+  - name: Listing Files
+    run: ls -l
+    shell: bash
+  - run: cp -r  *  /__w/java-hello-world-with-maven/artifact_dir/
+    shell: bash
+  - name: Cache node modules
+    uses: actions/cache@v2
+    env:
+      cache-name: cache-node-modules
+    with:
+      # npm cache files are stored in `~/.npm` on Linux/macOS
+      path: /__w/java-hello-world-with-maven/artifact_dir
+      key: key1
