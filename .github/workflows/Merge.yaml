@@ -4,7 +4,7 @@ name: Merge to feature
 on:
   push:
     branches:
-      - master
+      - Cache
 jobs:
   build:
     runs-on: [ ubuntu-latest ]
@@ -24,11 +24,11 @@ jobs:
        image: maven:3.3-jdk-8
      needs: build
      steps:  
-      - name: 'Download Updated pom.xml'
-        uses: actions/download-artifact@v3
+      - name: 'Caching pom.xml'
+        uses: actions/cache@v2
         with:
-          name: my-artifact
           path: /__w/java-hello-world-with-maven/artifact_dir
+          key: key1
       - name: Checkout  directory 
         run: pwd
         shell: bash
@@ -44,4 +44,3 @@ jobs:
           name: my-artifact2
           path: /__w/java-hello-world-with-maven/java-hello-world-with-maven/target/
         
-#Testing
