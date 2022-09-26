@@ -20,7 +20,7 @@ runs:
     shell: bash
   - run: cp -r  *  /__w/java-hello-world-with-maven/artifact_dir/
     shell: bash
-  - name: Downloading updated pom.xml
+  - name: 'Uploading updated pom.xml'
     uses: actions/upload-artifact@v3
     with:
       name: my-artifact
