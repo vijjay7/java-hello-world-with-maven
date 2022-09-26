@@ -20,8 +20,11 @@ runs:
     shell: bash
   - run: cp -r  *  /__w/java-hello-world-with-maven/artifact_dir/
     shell: bash
-  - name: 'Uploading updated pom.xml'
-    uses: actions/upload-artifact@v3
+  - name: Cache node modules
+    uses: actions/cache@v2
+    env:
+      cache-name: cache-node-modules
     with:
-      name: my-artifact
+      # npm cache files are stored in `~/.npm` on Linux/macOS
       path: /__w/java-hello-world-with-maven/artifact_dir
+      key: key1
