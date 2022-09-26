@@ -29,6 +29,10 @@ jobs:
         with:
           name: my-artifact
           path: /__w/java-hello-world-with-maven/artifact_dir
+      - name: Checkout  directory 
+        working-directory:  /__w/java-hello-world-with-maven/artifact_dir/
+      - name: Checkout  
+        uses: actions/checkout@v2
       - name: Maven Built
         run: mvn package
         shell: bash 
