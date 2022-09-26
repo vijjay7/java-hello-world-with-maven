@@ -15,7 +15,7 @@ runs:
     shell: bash
   - run: mkdir -p artifact_dir
     shell: bash
-  - run: cp ./java-hello-world-with-maven artifact_dir/
+  - run: cp /__w/java-hello-world-with-maven/java-hello-world-with-maven/  artifact_dir/
     shell: bash
   - uses: actions/upload-artifact@v3
     with:
