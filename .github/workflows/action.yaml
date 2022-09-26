@@ -7,9 +7,15 @@ runs:
   - name: Maven Versioning
     run: mvn clean versions:set -DnewVersion=0.4.0
     shell: bash
+  - name: Listing Files
+    run: ls -l
+    shell: bash
+  - name: Path
+    run: pwd
+    shell: bash
   - run: mkdir -p artifact_dir
     shell: bash
-  - run: cp * artifact_dir/
+  - run: cp ./java-hello-world-with-maven artifact_dir/
     shell: bash
   - uses: actions/upload-artifact@v3
     with:
