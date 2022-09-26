@@ -37,8 +37,9 @@ jobs:
         uses: actions/checkout@v2
       - name: Maven Built
         run: mvn package
-        shell: bash 
-      - uses: actions/upload-artifact@v3
+        shell: bash
+      - name: 'Download jar file'
+        uses: actions/upload-artifact@v3
         with:
           name: my-artifact2
           path: /__w/java-hello-world-with-maven/java-hello-world-with-maven/target/
