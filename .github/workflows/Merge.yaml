@@ -30,6 +30,8 @@ jobs:
           name: my-artifact
           path: /__w/java-hello-world-with-maven/artifact_dir
       - name: Checkout  directory 
+        run: pwd
+        shell: bash
         working-directory:  /__w/java-hello-world-with-maven/artifact_dir/
       - name: Checkout  
         uses: actions/checkout@v2
