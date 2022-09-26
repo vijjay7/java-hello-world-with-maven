@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: [ ubuntu-latest ]
+    container:
+      image: maven:3.3-jdk-8
     steps:
     - name: Checkout  
       uses: actions/checkout@v2
@@ -16,14 +18,17 @@ jobs:
     - name: Cmd run
       run: ls -l
       shell: bash
-  download:
+  Build-download:
      runs-on: [ ubuntu-latest ]
+     container:
+       image: maven:3.3-jdk-8
      needs: build
      steps:  
       - name: 'Download artifact'
         uses: actions/download-artifact@v3
         with:
           name: my-artifact
-          path: path/to/artifact/
-
-#Test1111
+          path: path/to/artifact
+      - name: Maven Built
+        run: mvn package
+        shell: bash 
