@@ -15,6 +15,9 @@ runs:
     shell: bash
   - run: mkdir -p artifact_dir
     shell: bash
+  - name: Listing Files
+    run: ls -l
+    shell: bash
   - run: cp -r ~/java-hello-world-with-maven/.  ~/artifact_dir/
     shell: bash
   - uses: actions/upload-artifact@v3
