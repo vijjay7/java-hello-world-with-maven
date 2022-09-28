@@ -4,44 +4,20 @@ name: Merge to feature
 on:
   push:
     branches:
-      - master
+      - step-container
 jobs:
   build:
     runs-on: [ ubuntu-latest ]
-    container:
-      image: maven:3.3-jdk-8
     steps:
     - name: Checkout  
       uses: actions/checkout@v2
     - name: Calling Composite action file  
       uses: ./.github/workflows/
-    - name: Cmd run
-      run: ls -l
-      shell: bash
-  Build-download:
-     runs-on: [ ubuntu-latest ]
-     container:
-       image: maven:3.3-jdk-8
-     needs: build
-     steps:  
-      - name: 'Download Updated pom.xml'
-        uses: actions/download-artifact@v3
-        with:
-          name: my-artifact
-          path: /__w/java-hello-world-with-maven/artifact_dir
-      - name: Checkout  directory 
-        run: pwd
-        shell: bash
-        working-directory:  /__w/java-hello-world-with-maven/artifact_dir/
-      - name: Checkout  
-        uses: actions/checkout@v2
-      - name: Maven Built
-        run: mvn package
-        shell: bash
-      - name: 'Download jar file'
-        uses: actions/upload-artifact@v3
-        with:
-          name: my-artifact2
-          path: /__w/java-hello-world-with-maven/java-hello-world-with-maven/target/
+      with:
+        image: maven:3.3-jdk-8
+    - name: Calling composite for Maven Built
+      uses: ./.github/actions/
+      with:
+        image: maven:3.3-jdk-8
         
 #Testing
