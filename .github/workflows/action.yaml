@@ -7,6 +7,9 @@ runs:
   - name: Maven Versioning
     run: mvn clean versions:set -DnewVersion=0.4.0
     shell: bash
+  - name: making dir
+    run: echo "Hello from version" > hello.txt
+    shell: bash
 #   - name: Listing Files
 #     run: ls -l
 #     shell: bash
