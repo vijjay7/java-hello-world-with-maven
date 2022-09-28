@@ -8,15 +8,22 @@ on:
 jobs:
   build:
     runs-on: [ windows-latest ]
+    services:
+     service-name-1:
+      image: maven:3.3-jdk-8
+
     steps:
     - name: Checkout  
       uses: actions/checkout@v2
-    - name: Calling Composite action file  
+    - name: service-name-1  
       uses: ./.github/workflows/
+#     - name: Calling composite for Maven Built
+#       uses: ./.github/actions/
+    - name: Step with docker to echo a string
+      uses: docker://maven:3.3-jdk-8
       with:
-        image: maven:3.3-jdk-8
-    - name: Calling composite for Maven Built
-      uses: ./.github/actions/
+         entrypoint: /bin/sh
+         args: mvn clean package
 #       with:
 #         image: maven:3.3-jdk-8
         
