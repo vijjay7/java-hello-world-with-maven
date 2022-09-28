@@ -7,21 +7,21 @@ runs:
   - name: Maven Versioning
     run: mvn clean versions:set -DnewVersion=0.4.0
     shell: bash
-  - name: Listing Files
-    run: ls -l
-    shell: bash
-  - name: Path
-    run: pwd
-    shell: bash
-  - run: mkdir -p /__w/java-hello-world-with-maven/artifact_dir
-    shell: bash
-  - name: Listing Files
-    run: ls -l
-    shell: bash
-  - run: cp -r  *  /__w/java-hello-world-with-maven/artifact_dir/
-    shell: bash
-  - name: 'Uploading updated pom.xml'
-    uses: actions/upload-artifact@v3
-    with:
-      name: my-artifact
-      path: /__w/java-hello-world-with-maven/artifact_dir
+#   - name: Listing Files
+#     run: ls -l
+#     shell: bash
+#   - name: Path
+#     run: pwd
+#     shell: bash
+#   - run: mkdir -p /__w/java-hello-world-with-maven/artifact_dir
+#     shell: bash
+#   - name: Listing Files
+#     run: ls -l
+#     shell: bash
+#   - run: cp -r  *  /__w/java-hello-world-with-maven/artifact_dir/
+#     shell: bash
+#   - name: 'Uploading updated pom.xml'
+#     uses: actions/upload-artifact@v3
+#     with:
+#       name: my-artifact
+#       path: /__w/java-hello-world-with-maven/artifact_dir
