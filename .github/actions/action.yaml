@@ -1,0 +1,9 @@
+name: Maven-Build
+runs:
+  using: "composite"
+  steps:
+#   - name: Checkout Github Action
+#     uses: actions/checkout@v3
+  - name: Maven Build
+    run:  mvn package
+    shell: bash
