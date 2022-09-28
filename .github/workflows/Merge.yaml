@@ -17,7 +17,7 @@ jobs:
         image: maven:3.3-jdk-8
     - name: Calling composite for Maven Built
       uses: ./.github/actions/
-      with:
-        image: maven:3.3-jdk-8
+#       with:
+#         image: maven:3.3-jdk-8
         
 #Testing
