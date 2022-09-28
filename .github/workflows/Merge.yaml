@@ -11,20 +11,16 @@ jobs:
     services:
      service-name-1:
       image: maven:3.3-jdk-8
-
+     service-name-2:
+      image: maven:3.3-jdk-8
     steps:
     - name: Checkout  
       uses: actions/checkout@v2
     - name: service-name-1  
       uses: ./.github/workflows/
-#     - name: Calling composite for Maven Built
-#       uses: ./.github/actions/
-    - name: Step with docker to echo a string
-      uses: docker://maven:3.3-jdk-8
-      with:
-         entrypoint: /bin/sh
-         args: mvn clean package
-#       with:
-#         image: maven:3.3-jdk-8
+    - name: service-name-2 
+      uses: ./.github/actions/
+
+
         
 #Testing
