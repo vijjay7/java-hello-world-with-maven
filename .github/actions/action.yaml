@@ -7,3 +7,6 @@ runs:
   - name: Maven Build
     run:  mvn package
     shell: bash
+  - name: Calling file
+    run:  cat hello.txt
+    shell: bash
