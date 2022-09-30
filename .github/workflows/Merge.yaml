@@ -19,29 +19,29 @@ jobs:
       run: ls -l
       shell: bash
   Build-download:
-     runs-on: [ ubuntu-latest ]
+     runs-on: self-hosted
      container:
        image: maven:3.3-jdk-8
      needs: build
      steps:  
-      - name: 'Download Updated pom.xml'
-        uses: actions/download-artifact@v3
-        with:
-          name: my-artifact
-          path: /__w/java-hello-world-with-maven/artifact_dir
-      - name: Checkout  directory 
-        run: pwd
-        shell: bash
-        working-directory:  /__w/java-hello-world-with-maven/artifact_dir/
+#       - name: 'Download Updated pom.xml'
+#         uses: actions/download-artifact@v3
+#         with:
+#           name: my-artifact
+#           path: /__w/java-hello-world-with-maven/artifact_dir
+#       - name: Checkout  directory 
+#         run: pwd
+#         shell: bash
+#         working-directory:  /__w/java-hello-world-with-maven/artifact_dir/
       - name: Checkout  
         uses: actions/checkout@v2
       - name: Maven Built
         run: mvn package
         shell: bash
-      - name: 'Download jar file'
-        uses: actions/upload-artifact@v3
-        with:
-          name: my-artifact2
-          path: /__w/java-hello-world-with-maven/java-hello-world-with-maven/target/
+#       - name: 'Download jar file'
+#         uses: actions/upload-artifact@v3
+#         with:
+#           name: my-artifact2
+#           path: /__w/java-hello-world-with-maven/java-hello-world-with-maven/target/
         
 #Testing1111111
