@@ -1,10 +1,10 @@
-name: Maven-version
+name: PR- template file
 runs:
   using: "composite"
   steps:
   - name: Checkout Github Action
     uses: actions/checkout@v3
-  - name: Maven Versioning
+  - name: Calling Maven Versioning file
     uses: ./.github/workflows/version/
   - name: Maven Build
     uses: ./.github/workflows/Build/ 
