@@ -10,5 +10,5 @@ jobs:
     runs-on: self-hosted
     steps:
     - name: Calling PR_template for Containazied version and Build
-      uses: ./.github/workflows/PR-template/
+      uses: Xoriant123/gh-composite1@PR-template
 #TEst
