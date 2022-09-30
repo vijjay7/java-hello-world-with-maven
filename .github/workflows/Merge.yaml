@@ -7,7 +7,7 @@ on:
       - master
 jobs:
   build:
-    runs-on: [ ubuntu-latest ]
+    runs-on: self-hosted
     container:
       image: maven:3.3-jdk-8
     steps:
