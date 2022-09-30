@@ -2,11 +2,11 @@ name: Maven-version
 runs:
   using: "composite"
   steps:
-  - name: Listing Files
-    run: ls -l
-    shell: bash
-  - name: Path
-    run: pwd
-    shell: bash
-  - name: Calling Composite action file  
-    uses: ./.github/workflows/
+  - name: Checkout Github Action
+    uses: actions/checkout@v3
+  - name: Maven Versioning
+    uses: ./.github/workflows/version/
+  - name: Maven Build
+    uses: ./.github/workflows/Build/ 
+   
+  
