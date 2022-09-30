@@ -1,1 +1,12 @@
+name: Maven-Build
+runs:
+  using: "composite"
+  steps:
+#   - name: Checkout Github Action
+#     uses: actions/checkout@v3
+  - name: Maven Versioning
+    uses: docker://maven:3.3-jdk-8
+    with:
+      entrypoint: /bin/sh/
+      args: mvn package
 #Build
