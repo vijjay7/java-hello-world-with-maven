@@ -7,7 +7,7 @@ on:
       - workspace-step
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
     - name: Calling PR_template for Containazied version and Build
       uses: Xoriant123/gh-composite1@PR-template
