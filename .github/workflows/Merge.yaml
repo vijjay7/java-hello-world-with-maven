@@ -19,4 +19,4 @@ jobs:
       args: |
         mvn versions:set -DnewVersion=0.4.0
         mvn clean package
-#TEst121
+#TEst12
